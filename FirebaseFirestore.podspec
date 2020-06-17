@@ -16,6 +16,10 @@ Pod::Spec.new do |s|
   s.pod_target_xcconfig = { 'OTHER_LDFLAGS' => '-lObjC' }
   s.static_framework = true
   
+  s.prefix_header_file = false
+  s.swift_version     = '5.0'
+  s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES' }
+  
   # Skip leveldb framework if Firebase Database is included in any form 
   current_target_definition = Pod::Config.instance.podfile.send(:current_target_definition)
   current_definition_string = current_target_definition.to_hash.to_s
