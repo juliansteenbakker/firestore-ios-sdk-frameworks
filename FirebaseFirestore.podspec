@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   s.preserve_paths      = 'FirebaseFirestore/*.xcframework'
   s.resource            = 'FirebaseFirestore/Resources/*.bundle'
   s.pod_target_xcconfig = { 'OTHER_LDFLAGS' => '$(inherited) -lObjC', 'DEFINES_MODULE' => 'YES' }
-  s.static_framework = false
+  s.static_framework = true
   
   # Skip leveldb framework if Firebase Database is included in any form 
   current_target_definition = Pod::Config.instance.podfile.send(:current_target_definition)
